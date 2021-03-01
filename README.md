@@ -3,8 +3,8 @@
 # Requirements
 
 - [bash](https://www.gnu.org/software/bash/)
-- [tailscale](https://tailscale.com/download)
 - [jq](https://stedolan.github.io/jq/)
+- [tailscale](https://tailscale.com/download)
 
 # Installation
 
