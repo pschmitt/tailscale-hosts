@@ -11,8 +11,7 @@ get_ts_hosts() {
   # skip services (eg: hello.ipn.dev)
   tailscale status --json | \
     jq -r '[.Self, .Peer[]] |
-           sort_by(.DNSName) |
-           .[] |
+           sort_by(.DNSName)[] |
            select(.DNSName != "") |
            .TailAddr + " " + ((.DNSName | split("."))[0])'
 }
