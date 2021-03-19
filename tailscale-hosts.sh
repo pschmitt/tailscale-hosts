@@ -10,7 +10,7 @@ get_ts_hosts() {
   # Also, we do filter out items that have an empty DNSName which allows us to
   # skip services (eg: hello.ipn.dev)
   tailscale status --json | \
-    jq -rS '[.Self, .Peer[]] |
+    jq -r '[.Self, .Peer[]] |
            sort_by(.DNSName) |
            .[] |
            select(.DNSName != "") |
