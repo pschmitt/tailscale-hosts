@@ -81,8 +81,8 @@ generate_hosts_file() {
 restart_resolver_service() {
   if is_openwrt
   then
-    echo_info " OpenWRT detected. Restarting resolver service"
-    /etc/init.d/resolver restart
+    echo_info "OpenWRT detected. Reloading dnsmasq (SIGHUP)"
+    killall -HUP dnsmasq
   else
     echo_error "Unknown OS. I don't know how to restart the resolver service"
     return 7
